@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Análise dos dados de tráfego dos radares de controle de velocidade da BR-153 (Transbrasiliana), ANTT." />
+    <title>Radares BR-153</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232a78d6'/%3E%3Cpath d='M9 26 14 6h4l5 20' stroke='%23fff' stroke-width='2.5' fill='none'/%3E%3Cpath d='M16 9v3m0 4v3m0 4v2' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand">
+        <h1>Radares de velocidade · BR-153 Transbrasiliana</h1>
+        <p id="source-line" class="muted">Sistema de Informação de Rodovias — ANTT</p>
+      </div>
+      <div class="header-actions">
+        <label class="btn" title="Analisar outro arquivo CSV com o mesmo layout">
+          <input id="file-input" type="file" accept=".csv,text/csv" hidden />
+          Carregar outro CSV
+        </label>
+        <button id="theme-toggle" class="btn ghost" type="button" aria-label="Alternar tema claro/escuro">◐</button>
+      </div>
+    </header>
+    <nav class="tabs" role="tablist" aria-label="Análises">
+      <button role="tab" data-tab="t1" id="tab-t1">1 · Caracterização</button>
+      <button role="tab" data-tab="t2" id="tab-t2">2 · Tipo × velocidade</button>
+      <button role="tab" data-tab="t3" id="tab-t3">3 · Distribuição por ponto</button>
+      <button role="tab" data-tab="t4" id="tab-t4">4 · Variação temporal</button>
+      <button role="tab" data-tab="t5" id="tab-t5">5 · Espacial e operacional</button>
+    </nav>
+    <main id="app" role="tabpanel" tabindex="-1" aria-live="polite"></main>
+    <footer class="app-footer muted">
+      Dados: volume de tráfego nos radares de controle de velocidade (ANTT). Valores calculados no navegador a partir do arquivo carregado.
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
